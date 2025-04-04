@@ -1,8 +1,8 @@
-import type { PiscinaTask } from '../../task_queue';
+import {TaskInfo} from '../../task_queue';
 import type { PiscinaWorker } from '..';
 
 export type PiscinaLoadBalancer = (
-  task: PiscinaTask,
+  task: TaskInfo,
   workers: PiscinaWorker[]
 ) => PiscinaWorker | null; // If candidate is passed, it will be used as the result of the load balancer and ingore the command;
 
@@ -26,7 +26,7 @@ export function LeastBusyBalancer (
       if (worker.isRunningAbortableTask) continue;
 
       if (
-        !task.isAbortable &&
+        !task.interface.isAbortable &&
         (worker.currentUsage < checkpoint)
       ) {
         candidate = worker;

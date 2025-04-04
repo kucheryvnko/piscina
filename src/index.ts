@@ -457,7 +457,7 @@ class ThreadPool {
     // otherwise we might be distributing aborted tasks to workers
     if (task.aborted) return false;
 
-    const candidate = this.balancer(task.interface, workers);
+    const candidate = this.balancer(task, workers);
 
     // Seeking for a real worker instead of customized one
     if (candidate != null && candidate[kWorkerData] != null) {
