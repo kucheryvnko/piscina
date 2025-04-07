@@ -985,6 +985,8 @@ export default class Piscina<T = any, R = any> extends EventEmitterAsyncResource
   static get valueSymbol () { return kValue; }
 
   static get queueOptionsSymbol () { return kQueueOptions; }
+
+  static get workerDataSymbol() { return kWorkerData; }
 }
 
 export const move = Piscina.move;
@@ -994,10 +996,14 @@ export const workerData = Piscina.workerData;
 export {
   Piscina,
   PiscinaTask,
+  TaskInfo,
+  PiscinaLoadBalancer,
+  PiscinaWorker,
   TaskQueue,
   kTransferable as transferableSymbol,
   kValue as valueSymbol,
   kQueueOptions as queueOptionsSymbol,
+  kWorkerData as workerDataSymbol,
   version,
   FixedQueue
 };

@@ -1,6 +1,6 @@
 {
-  "name": "piscina",
-  "version": "5.0.0-alpha.2",
+  "name": "@kucheryvnko/forked-piscina",
+  "version": "1.0.0-test.3",
   "description": "A fast, efficient Node.js Worker Thread Pool implementation",
   "main": "./dist/main.js",
   "types": "./dist/index.d.ts",
